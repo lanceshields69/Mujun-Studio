@@ -257,7 +257,7 @@
 
     document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-    // Typewriter effect
+    // Typewriter effect — starts after logo video ends
     (function() {
       const text = "I design products people love at scale";
       const el = document.getElementById('typewriter');
@@ -269,7 +269,12 @@
           setTimeout(type, 45);
         }
       }
-      setTimeout(type, 500);
+      const video = document.querySelector('.logo-block video');
+      if (video) {
+        video.addEventListener('ended', () => setTimeout(type, 200));
+      } else {
+        setTimeout(type, 500);
+      }
     })();
 
     // Project data
