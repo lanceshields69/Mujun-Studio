@@ -269,11 +269,16 @@
           setTimeout(type, 45);
         }
       }
+      const cursor = document.querySelector('.blink-cursor');
       const video = document.querySelector('.logo-block video');
       if (video) {
-        video.addEventListener('ended', () => setTimeout(type, 200));
+        video.addEventListener('ended', () => {
+          setTimeout(type, 200);
+          setTimeout(() => cursor && cursor.classList.add('visible'), 2000);
+        });
       } else {
         setTimeout(type, 500);
+        setTimeout(() => cursor && cursor.classList.add('visible'), 2000);
       }
     })();
 
