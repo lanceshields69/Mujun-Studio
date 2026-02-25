@@ -722,11 +722,11 @@ p {
 
 .blink-cursor {
   opacity: 0;
-  animation: blink 1s step-end infinite;
 }
 
 .blink-cursor.visible {
   opacity: 1;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
