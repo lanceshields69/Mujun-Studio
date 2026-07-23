@@ -1,0 +1,96 @@
+/* Japanese-page overrides — loaded after styles.css. Do not edit styles.css. */
+
+body {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+}
+
+/* 1. Kill negative tracking — Japanese sits on a fixed em square. */
+.intro-heading,
+.headline-line,
+.thesis-heading,
+.connect-heading,
+.project-name,
+.service-title,
+.stats-intro-text,
+.section-label {
+  letter-spacing: 0;
+}
+
+/* 2. Open the leading — Japanese needs more room than Latin. */
+.thesis-heading,
+.service-title {
+  line-height: 1.5;
+}
+
+.thesis-body,
+.service-body,
+.project-body p,
+.stats-intro-bio {
+  line-height: 1.9;
+}
+
+.intro-heading,
+.headline-line {
+  line-height: 1.25;
+}
+
+/* 3. Natural CJK line flow. word-break: keep-all was tried here first,
+   but Japanese has no spaces, so keep-all (which only recognizes "words"
+   at whitespace) can't find any break opportunity except at the comma/
+   period marks themselves — every clause landed on its own line instead
+   of filling the available width, unlike the English page's paragraphs.
+   Default word-break (normal) already wraps CJK correctly between
+   characters per the standard line-breaking rules, which is what makes
+   it read like natural, filled-width Japanese typesetting. Only
+   overflow-wrap: anywhere is kept, as a safety net for unbreakable mixed
+   runs (Latin product names joined by Japanese commas with no spaces,
+   e.g. "LegalOn、SalesOn、CorporateOn...") that would otherwise overflow
+   their column by hundreds of pixels and widen the whole page. */
+.intro-heading,
+.headline-line,
+.thesis-heading,
+.thesis-body,
+.connect-heading,
+.project-name,
+.project-subtitle,
+.service-title,
+.service-body,
+.service-tag,
+.stats-intro-text,
+.stats-intro-bio,
+.stat-description,
+.section-label,
+.hero-tag,
+.logo-tagline,
+.project-body p,
+.footer-colophon,
+.footer-heading,
+.footer-link,
+.footer-link-block,
+.modal-title,
+.modal-subtitle,
+.modal-description,
+.modal-role-text,
+.modal-testimonial-quote,
+.text-link {
+  overflow-wrap: anywhere;
+}
+
+/* .stats-intro-text's 325px max-width (styles.css) is tuned for the
+   English phrase; "プリンシパルデザイナー" alone needs ~330px, just over
+   that, so it wraps mid-word. A small amount of extra room lets it
+   land on one line instead. */
+.stats-intro-text {
+  max-width: 380px;
+}
+
+/* 4. Playfair Display has no Japanese glyphs — carry the accent with
+   weight and color instead of a synthesized italic. */
+.emphasis {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 900;
+  color: var(--accent);
+  font-size: 1em;
+  letter-spacing: 0;
+}
