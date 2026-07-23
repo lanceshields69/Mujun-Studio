@@ -773,7 +773,7 @@ p {
   gap: 16px;
   font-weight: 600;
   font-size: 24px;
-  width: 341px;
+  width: 682px;
   line-height: 1;
 }
 
@@ -786,7 +786,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  width: 286px;
+  width: 572px;
 }
 
 .project-name {
