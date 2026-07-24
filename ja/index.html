@@ -675,6 +675,7 @@
           "../images/Harmony-thumbnail-03.webp",
           "../images/Harmony-thumbnail-09.webp"
         ],
+        video: "https://www.youtube.com/embed/yTMJHcjBX6k?si=sUFLp_Ig9LuRc6DL",
         role: "人間中心のAI戦略、部門横断のコラボレーション、AIによるイノベーションと実験",
         metrics: [
           { value: "25M", label: "想定インストール数" },
@@ -821,6 +822,11 @@
           <div class="modal-image-grid">
             ${p.images.map(img => `<img src="${img}" alt="${p.title}">`).join('')}
           </div>
+          ${p.video ? `
+          <div class="modal-video">
+            <iframe src="${p.video}" title="${p.title} video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          ` : ''}
         </div>
       `;
     }
