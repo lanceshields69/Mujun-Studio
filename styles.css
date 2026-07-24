@@ -500,6 +500,12 @@ p {
   width: 420px;
 }
 
+/* Practice section cards are 480px per the Figma spec; Build section
+   reuses .service-card at the narrower 420px default. */
+#services .service-card {
+  width: 480px;
+}
+
 .service-title {
   font-size: 28px;
   line-height: 0.95;
