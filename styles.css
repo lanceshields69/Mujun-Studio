@@ -1618,7 +1618,7 @@ p {
 
   .emphasis {
     font-size: clamp(50px, 15vw, 70px);
-    line-height: inherit;
+    line-height: 0;
     display: inline;
     position: static;
     top: auto;
