@@ -100,6 +100,21 @@
             <img class="client-logo" src="images/client-kraft.png" alt="">
             <img class="client-logo" src="images/client-tepco.png" alt="">
             <img class="client-logo" src="images/client-fitbit.png" alt="">
+            <img class="client-logo" src="images/client-chase.png" alt="">
+            <img class="client-logo" src="images/client-hitachi.png" alt="">
+            <img class="client-logo" src="images/client-redbull.png" alt="">
+            <img class="client-logo" src="images/client-kddi.png" alt="">
+            <img class="client-logo" src="images/client-walmart.png" alt="">
+            <img class="client-logo" src="images/client-mitsubishi.png" alt="">
+            <img class="client-logo" src="images/client-adobe.png" alt="">
+            <img class="client-logo" src="images/client-yokogawa.png" alt="">
+            <img class="client-logo" src="images/client-visa.png" alt="">
+            <img class="client-logo" src="images/client-jal.png" alt="">
+            <img class="client-logo" src="images/client-chanel.png" alt="">
+            <img class="client-logo" src="images/client-mitsui.png" alt="">
+            <img class="client-logo" src="images/client-kraft.png" alt="">
+            <img class="client-logo" src="images/client-tepco.png" alt="">
+            <img class="client-logo" src="images/client-fitbit.png" alt="">
           </div>
         </div>
       </div>
@@ -502,6 +517,25 @@
   </div>
 
   <script>
+    // Client logos marquee — measure the exact pixel distance to the start
+    // of the second logo set (rather than translateX(-50%), which bisects
+    // the whole track including every gap and lands half a gap short of
+    // the real seam, causing a visible snap once per loop) and expose it
+    // as a custom property the keyframes read.
+    (function() {
+      const track = document.querySelector('.client-logos-track');
+      if (!track) return;
+      const setSize = track.children.length / 3;
+      function setMarqueeDistance() {
+        const seamItem = track.children[setSize];
+        if (seamItem) {
+          track.style.setProperty('--marquee-distance', seamItem.offsetLeft + 'px');
+        }
+      }
+      setMarqueeDistance();
+      window.addEventListener('load', setMarqueeDistance);
+    })();
+
     // Scroll fade-in
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

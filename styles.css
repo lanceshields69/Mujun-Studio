@@ -313,6 +313,7 @@ p {
   gap: 40px;
   width: max-content;
   animation: client-logos-scroll 24s linear infinite;
+  --marquee-distance: 33.333%; /* fallback for one of 3 sets, before JS measures the exact seam */
 }
 
 .client-logo {
@@ -324,7 +325,7 @@ p {
 
 @keyframes client-logos-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(calc(-1 * var(--marquee-distance))); }
 }
 
 @media (prefers-reduced-motion: reduce) {
