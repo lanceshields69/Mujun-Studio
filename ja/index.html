@@ -150,7 +150,7 @@
       <h2 class="section-label fade-in">実績</h2>
 
       <!-- Project 1: On Technologies (LegalOn) -->
-      <article class="project">
+      <article class="project" id="project-legalon">
         <div class="project-images fade-in">
           <div class="image-grid image-grid-4">
             <img src="../images/legalon-3.webp" alt="On Technologies (LegalOn) スクリーンショット1">
@@ -175,7 +175,7 @@
       </article>
 
       <!-- Project 2: Adobe AI Image Editor -->
-      <article class="project">
+      <article class="project" id="project-adobe-photos">
         <div class="project-images fade-in">
           <div class="image-grid image-grid-4">
             <img src="../images/Harmony-thumbnail-01.webp" alt="Adobe AI Image Editor スクリーンショット1">
@@ -200,7 +200,7 @@
       </article>
 
       <!-- Project 3: Walmart AI Shopping Experience -->
-      <article class="project">
+      <article class="project" id="project-walmart">
         <div class="project-images fade-in">
           <div class="image-grid image-grid-4">
             <img src="../images/walmart-3.webp" alt="WalmartのAIファースト・ショッピング体験 スクリーンショット1">
@@ -225,7 +225,7 @@
       </article>
 
       <!-- Project 4: Adobe Express Enterprise -->
-      <article class="project">
+      <article class="project" id="project-adobe-enterprise">
         <div class="project-images fade-in">
           <div class="image-grid image-grid-4">
             <img src="../images/extensibility-thumbnail-1.webp" alt="Adobe Express Enterprise スクリーンショット1">
@@ -250,7 +250,7 @@
       </article>
 
       <!-- Project 5: Modere eCommerce -->
-      <article class="project">
+      <article class="project" id="project-modere">
         <div class="project-images fade-in">
           <div class="image-grid image-grid-4">
             <img src="../images/modere-1.webp" alt="Modere eコマース スクリーンショット1">
@@ -275,7 +275,7 @@
       </article>
 
       <!-- Project 6: Modular Suite for XD -->
-      <article class="project">
+      <article class="project" id="project-modular">
         <div class="project-images fade-in">
           <div class="image-grid image-grid-4">
             <img src="../images/Modular-2.webp" alt="Modular Suite スクリーンショット1">
@@ -870,6 +870,20 @@
 
     document.getElementById('project-modal-overlay').addEventListener('click', (e) => {
       if (e.target === e.currentTarget) closeModal();
+    });
+
+    // Project anchor links (from the page or from inside a modal)
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href^="#project-"]');
+      if (!link) return;
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      if (document.getElementById('project-modal-overlay').classList.contains('active')) {
+        closeModal();
+      }
+      target.scrollIntoView({ behavior: 'smooth' });
+      history.pushState(null, '', link.getAttribute('href'));
     });
 
     // Lightbox
