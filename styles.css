@@ -182,10 +182,10 @@ p {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   column-gap: 30px;
   row-gap: 25px;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -292,6 +292,45 @@ p {
 
 .hero-tag-arrow {
   color: var(--accent);
+}
+
+.client-logos {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin-top: 95px;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.client-logos.revealed {
+  opacity: 0.5;
+}
+
+.client-logos-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: client-logos-scroll 24s linear infinite;
+}
+
+.client-logo {
+  flex-shrink: 0;
+  width: 125px;
+  height: 35px;
+  object-fit: contain;
+}
+
+@keyframes client-logos-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-logos-track {
+    animation: none;
+  }
 }
 
 .headline-line {
@@ -1675,6 +1714,13 @@ p {
     grid-row: auto;
     order: 4;
     flex-wrap: wrap;
+  }
+
+  .client-logos {
+    grid-column: 1;
+    grid-row: auto;
+    order: 5;
+    margin-top: 48px;
   }
 
   .thesis-content {
