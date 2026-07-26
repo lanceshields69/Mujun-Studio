@@ -1032,6 +1032,14 @@ p {
   max-width: 1920px;
 }
 
+.connect-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
 .connect-heading {
   font-size: 37px;
   line-height: 0.95;
@@ -1040,6 +1048,86 @@ p {
 
 .cta-accent {
   color: var(--accent);
+}
+
+.scan-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 20px 30px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: none;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.scan-cta:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.scan-cta-arrow {
+  font-weight: 700;
+}
+
+/* Design Intelligence Tool Modal */
+.scan-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(4, 34, 15, 0.9);
+  background: rgb(from var(--bg) r g b / 90%);
+}
+
+.scan-modal-overlay.active {
+  display: flex;
+}
+
+.scan-modal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  background: var(--bg-elevated);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.scan-modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.scan-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.scan-modal-close:hover {
+  opacity: 0.7;
 }
 
 /* Footer */
@@ -1719,6 +1807,15 @@ p {
   .connect-heading {
     font-size: 28px;
     letter-spacing: -0.015em;
+  }
+
+  .scan-cta {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    padding: 16px 20px;
+    font-size: 16px;
   }
 
   .project-name {

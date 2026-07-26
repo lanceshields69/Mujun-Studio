@@ -383,10 +383,21 @@
     <!-- Connect Section -->
     <section id="contact" class="connect-section">
       <hr class="divider">
-      <p class="connect-heading fade-in"><span class="cta-accent">Connect</span> with me to explore your project's potential.</p>
+      <div class="connect-row fade-in">
+        <p class="connect-heading"><span class="cta-accent">Connect</span> with me to explore your project's potential.</p>
+        <button class="scan-cta" id="scan-cta-btn" type="button"><span class="scan-cta-arrow">→</span> Scan your site to get a design score</button>
+      </div>
       <hr class="divider">
     </section>
   </main>
+
+  <!-- Design Intelligence Tool Modal -->
+  <div class="scan-modal-overlay" id="scan-modal-overlay">
+    <div class="scan-modal">
+      <button class="scan-modal-close" id="scan-modal-close" type="button" aria-label="Close">&times;</button>
+      <iframe class="scan-modal-iframe" id="scan-modal-iframe" title="Design Intelligence Engine" loading="lazy"></iframe>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -885,6 +896,29 @@
       history.pushState(null, '', link.getAttribute('href'));
     });
 
+    // Design Intelligence tool modal
+    const SCAN_TOOL_URL = 'https://design-intelligence-engine.lovable.app';
+    const scanModalOverlay = document.getElementById('scan-modal-overlay');
+    const scanModalIframe = document.getElementById('scan-modal-iframe');
+
+    function openScanModal() {
+      scanModalIframe.src = SCAN_TOOL_URL;
+      scanModalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeScanModal() {
+      scanModalOverlay.classList.remove('active');
+      scanModalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('scan-cta-btn').addEventListener('click', openScanModal);
+    document.getElementById('scan-modal-close').addEventListener('click', closeScanModal);
+    scanModalOverlay.addEventListener('click', (e) => {
+      if (e.target === e.currentTarget) closeScanModal();
+    });
+
     // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -926,6 +960,8 @@
           lightbox.classList.remove('active');
         } else if (document.getElementById('project-modal-overlay').classList.contains('active')) {
           closeModal();
+        } else if (scanModalOverlay.classList.contains('active')) {
+          closeScanModal();
         }
       }
       if (lightbox.classList.contains('active')) {
