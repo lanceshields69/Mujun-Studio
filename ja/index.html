@@ -395,7 +395,6 @@
   <!-- Design Intelligence Tool Modal -->
   <div class="scan-modal-overlay" id="scan-modal-overlay">
     <div class="scan-modal">
-      <button class="scan-modal-close" id="scan-modal-close" type="button" aria-label="閉じる">&times;</button>
       <iframe class="scan-modal-iframe" id="scan-modal-iframe" title="Design Intelligence Engine" loading="lazy"></iframe>
     </div>
   </div>
@@ -915,7 +914,6 @@
     }
 
     document.getElementById('scan-cta-btn').addEventListener('click', openScanModal);
-    document.getElementById('scan-modal-close').addEventListener('click', closeScanModal);
     scanModalOverlay.addEventListener('click', (e) => {
       if (e.target === e.currentTarget) closeScanModal();
     });
