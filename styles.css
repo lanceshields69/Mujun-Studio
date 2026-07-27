@@ -1931,11 +1931,21 @@ p {
 
   .project-title {
     width: 100%;
+    font-size: 20px;
+  }
+
+  .project-names {
+    line-height: 1.2;
   }
 
   .project-body {
     width: 100%;
     max-width: 100%;
+  }
+
+  .project-body p {
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .stats-content {
