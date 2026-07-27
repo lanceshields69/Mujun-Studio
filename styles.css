@@ -231,14 +231,15 @@ p {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: 55px;
+  height: 32px;
   padding: 0;
   border: none;
-  background: none;
-  color: var(--text-primary);
+  border-radius: 3px;
+  background: var(--bg-brand);
+  color: var(--accent-ink);
   cursor: pointer;
-  margin-left: 12px;
+  margin-left: auto;
 }
 
 /* Mobile Menu Overlay — hidden by default; only openable below the
@@ -317,6 +318,14 @@ p {
 
   .nav-hamburger {
     display: flex;
+  }
+
+  .nav-logotype {
+    border-bottom: none;
+  }
+
+  .nav-header {
+    border-bottom: 1px solid var(--border-rule);
   }
 
   .mobile-menu-overlay.open {
