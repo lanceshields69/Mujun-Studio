@@ -1,0 +1,38 @@
+# Mujun Studio — robots.txt
+# All crawlers welcome, including AI search and training crawlers.
+
+User-agent: *
+Allow: /
+
+# Search + citation crawlers (AI answer engines)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://mujunstudio.com/sitemap.xml
