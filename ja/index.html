@@ -24,6 +24,11 @@
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../build.css">
   <link rel="stylesheet" href="ja.css">
+  <script>
+    if (localStorage.getItem('mujun-theme') === 'light') {
+      document.documentElement.dataset.theme = 'light';
+    }
+  </script>
 </head>
 <body>
 
@@ -40,13 +45,81 @@
       <a href="#origin" class="nav-link">由来</a>
       <a href="#studio" class="nav-link">スタジオ</a>
       <a href="#contact" class="nav-link">お問い合わせ</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="ライトモードに切り替え">
+        <svg class="theme-toggle-icon theme-toggle-icon--moon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M17.5 10.6583C17.3689 12.0768 16.8365 13.4287 15.9652 14.5557C15.0939 15.6826 13.9196 16.5382 12.5798 17.0221C11.2399 17.5061 9.78999 17.5984 8.39958 17.2884C7.00918 16.9784 5.73583 16.2788 4.72852 15.2715C3.72121 14.2642 3.02162 12.9908 2.71159 11.6004C2.40156 10.21 2.49393 8.76007 2.97788 7.42025C3.46184 6.08042 4.31736 4.90614 5.44434 4.03479C6.57133 3.16345 7.92316 2.63109 9.34167 2.5C8.51118 3.62356 8.11154 5.00787 8.21544 6.40118C8.31935 7.79448 8.91988 9.10422 9.90783 10.0922C10.8958 11.0801 12.2055 11.6807 13.5988 11.7846C14.9921 11.8885 16.3764 11.4888 17.5 10.6583Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="theme-toggle-icon theme-toggle-icon--sun" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10.5 14C12.433 14 14 12.433 14 10.5C14 8.567 12.433 7 10.5 7C8.567 7 7 8.567 7 10.5C7 12.433 8.567 14 10.5 14Z" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10.5 1.75V4.375" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M10.5 16.625V19.25" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3.6925 3.6925L5.5475 5.5475" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.4525 15.4525L17.3075 17.3075" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M1.75 10.5H4.375" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.625 10.5H19.25" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3.6925 17.3075L5.5475 15.4525" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15.4525 5.5475L17.3075 3.6925" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
       <div class="nav-lang">
         <a href="../" class="nav-lang-inactive" hreflang="en">EN</a>
         <span class="nav-lang-divider">|</span>
         <span class="nav-lang-active">JP</span>
       </div>
     </div>
+    <button class="nav-hamburger" id="nav-hamburger" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu-overlay">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+    <div class="mobile-menu-topbar">
+      <span class="mobile-menu-logo">矛盾</span>
+      <div class="mobile-menu-controls">
+        <button class="theme-toggle" id="theme-toggle-mobile" type="button" aria-label="ライトモードに切り替え">
+          <svg class="theme-toggle-icon theme-toggle-icon--moon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.5 10.6583C17.3689 12.0768 16.8365 13.4287 15.9652 14.5557C15.0939 15.6826 13.9196 16.5382 12.5798 17.0221C11.2399 17.5061 9.78999 17.5984 8.39958 17.2884C7.00918 16.9784 5.73583 16.2788 4.72852 15.2715C3.72121 14.2642 3.02162 12.9908 2.71159 11.6004C2.40156 10.21 2.49393 8.76007 2.97788 7.42025C3.46184 6.08042 4.31736 4.90614 5.44434 4.03479C6.57133 3.16345 7.92316 2.63109 9.34167 2.5C8.51118 3.62356 8.11154 5.00787 8.21544 6.40118C8.31935 7.79448 8.91988 9.10422 9.90783 10.0922C10.8958 11.0801 12.2055 11.6807 13.5988 11.7846C14.9921 11.8885 16.3764 11.4888 17.5 10.6583Z" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="theme-toggle-icon theme-toggle-icon--sun" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M10.5 14C12.433 14 14 12.433 14 10.5C14 8.567 12.433 7 10.5 7C8.567 7 7 8.567 7 10.5C7 12.433 8.567 14 10.5 14Z" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 1.75V4.375" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 16.625V19.25" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.6925 3.6925L5.5475 5.5475" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.4525 15.4525L17.3075 17.3075" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1.75 10.5H4.375" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.625 10.5H19.25" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.6925 17.3075L5.5475 15.4525" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.4525 5.5475L17.3075 3.6925" stroke="currentColor" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="nav-lang">
+          <a href="../" class="nav-lang-inactive" hreflang="en">EN</a>
+          <span class="nav-lang-divider">|</span>
+          <span class="nav-lang-active">JP</span>
+        </div>
+        <button class="mobile-menu-close" id="mobile-menu-close" type="button" aria-label="メニューを閉じる">
+          <svg width="17" height="16" viewBox="0 0 16.5332 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.268262 0.259611C0.440253 0.0933737 0.673395 0 0.916476 0C1.15956 0 1.3927 0.0933737 1.56469 0.259611L16.2412 14.4628C16.3313 14.5441 16.4036 14.6421 16.4538 14.751C16.5039 14.8599 16.5309 14.9774 16.533 15.0966C16.5352 15.2158 16.5125 15.3342 16.4664 15.4448C16.4203 15.5553 16.3516 15.6557 16.2645 15.74C16.1774 15.8243 16.0736 15.8907 15.9594 15.9354C15.8452 15.98 15.7229 16.002 15.5997 15.9999C15.4765 15.9978 15.3551 15.9717 15.2426 15.9232C15.13 15.8746 15.0288 15.8047 14.9448 15.7175L0.268262 1.51423C0.0964852 1.34779 0 1.12216 0 0.886921C0 0.651679 0.0964852 0.426056 0.268262 0.259611Z" fill="currentColor"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2405 0.259611C16.4123 0.426056 16.5088 0.651679 16.5088 0.886921C16.5088 1.12216 16.4123 1.34779 16.2405 1.51423L1.564 15.7175C1.39011 15.8743 1.16012 15.9596 0.922484 15.9556C0.684845 15.9515 0.458111 15.8584 0.290049 15.6957C0.121987 15.5331 0.0257188 15.3136 0.021526 15.0837C0.0173331 14.8537 0.105543 14.6311 0.267572 14.4628L14.9441 0.259611C15.1161 0.0933737 15.3492 0 15.5923 0C15.8354 0 16.0685 0.0933737 16.2405 0.259611Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-menu-links">
+      <a href="#approach" class="mobile-menu-link">アプローチ</a>
+      <a href="#practice" class="mobile-menu-link">できること</a>
+      <a href="#work" class="mobile-menu-link">実績</a>
+      <a href="#build" class="mobile-menu-link">つくり方</a>
+      <a href="#origin" class="mobile-menu-link">由来</a>
+      <a href="#studio" class="mobile-menu-link">スタジオ</a>
+      <a href="#contact" class="mobile-menu-link">お問い合わせ</a>
+    </nav>
+  </div>
 
   <main>
     <!-- Logo + Intro Section -->
@@ -518,6 +591,77 @@
   </div>
 
   <script>
+    // Client logos are white PNGs (for the dark background); light mode
+    // needs the -black variants instead, so swap src on theme change.
+    function applyLogoTheme() {
+      const isLight = document.documentElement.dataset.theme === 'light';
+      document.querySelectorAll('.client-logo').forEach(img => {
+        if (!img.dataset.srcBlack) {
+          img.dataset.srcWhite = img.getAttribute('src');
+          img.dataset.srcBlack = img.dataset.srcWhite.replace(/\.png$/, '-black.png');
+        }
+        img.src = isLight ? img.dataset.srcBlack : img.dataset.srcWhite;
+      });
+    }
+    applyLogoTheme();
+
+    // Theme toggle — persisted via localStorage, default is dark (no
+    // data-theme attribute). The head script above applies a stored
+    // 'light' preference before first paint to avoid a flash of dark.
+    // Two buttons share this logic: the nav one and the mobile-menu one;
+    // both flip together since their icon visibility is driven by the
+    // same [data-theme] CSS selector, not per-button state.
+    (function() {
+      const toggles = document.querySelectorAll('#theme-toggle, #theme-toggle-mobile');
+      if (!toggles.length) return;
+      const initiallyLight = document.documentElement.dataset.theme === 'light';
+      toggles.forEach(t => t.setAttribute('aria-label', initiallyLight ? 'ダークモードに切り替え' : 'ライトモードに切り替え'));
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const isLight = document.documentElement.dataset.theme === 'light';
+          const next = isLight ? 'dark' : 'light';
+          if (next === 'dark') {
+            delete document.documentElement.dataset.theme;
+          } else {
+            document.documentElement.dataset.theme = 'light';
+          }
+          localStorage.setItem('mujun-theme', next);
+          toggles.forEach(t => t.setAttribute('aria-label', next === 'dark' ? 'ライトモードに切り替え' : 'ダークモードに切り替え'));
+          applyLogoTheme();
+        });
+      });
+    })();
+
+    // Mobile menu — hamburger opens a full-screen overlay (nav links,
+    // theme toggle, language switch); closes via the X icon, Escape, or
+    // tapping a link (which then lets the anchor scroll happen).
+    (function() {
+      const hamburger = document.getElementById('nav-hamburger');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      if (!hamburger || !overlay) return;
+
+      function openMenu() {
+        overlay.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenu() {
+        overlay.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.querySelectorAll('.mobile-menu-link').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) closeMenu();
+      });
+    })();
+
     // Client logos marquee — measure the exact pixel distance to the start
     // of the second logo set (rather than translateX(-50%), which bisects
     // the whole track including every gap and lands half a gap short of
