@@ -20,7 +20,8 @@ body {
 /* 2. Open the leading — Japanese needs more room than Latin. */
 .thesis-heading,
 .service-title,
-.modal-title {
+.modal-title,
+.faq-question {
   line-height: 1.5;
 }
 
@@ -30,7 +31,8 @@ body {
 .stats-intro-bio,
 .modal-description,
 .modal-challenge p:last-child,
-.modal-solution p:last-child {
+.modal-solution p:last-child,
+.faq-answer {
   line-height: 1.9;
 }
 
@@ -82,7 +84,9 @@ body {
 .modal-metric-label,
 .modal-testimonial-name,
 .modal-testimonial-role,
-.text-link {
+.text-link,
+.faq-question,
+.faq-answer {
   overflow-wrap: anywhere;
 }
 
