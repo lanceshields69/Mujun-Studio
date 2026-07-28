@@ -7,15 +7,17 @@
   <meta name="description" content="Mujun Studio designs brand, product, and digital experience for companies in the U.S. and Japan.">
   <meta property="og:title" content="Mujun Studio">
   <meta property="og:description" content="Mujun Studio designs brand, product, and digital experience for companies in the U.S. and Japan.">
-  <meta property="og:image" content="images/Mujun-Studio-Social.png">
+  <meta property="og:image" content="https://mujunstudio.com/images/Mujun-Studio-Social.png">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mujunstudio.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Mujun Studio">
   <meta name="twitter:description" content="Mujun Studio designs brand, product, and digital experience for companies in the U.S. and Japan.">
   <meta name="twitter:image" content="images/Mujun-Studio-Social.png">
-  <link rel="alternate" hreflang="ja" href="https://lanceshields69.github.io/Mujun-Studio/ja/">
-  <link rel="alternate" hreflang="en" href="https://lanceshields69.github.io/Mujun-Studio/">
-  <link rel="canonical" href="https://lanceshields69.github.io/Mujun-Studio/">
+  <link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/">
+  <link rel="alternate" hreflang="en" href="https://mujunstudio.com/">
+  <link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/">
+  <link rel="canonical" href="https://mujunstudio.com/">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -288,7 +290,7 @@
           </div>
           <div class="project-body">
             <p>LegalOn built Japan's leading legal AI, then expanded into a broader suite of AI-powered business products. The new platform had to hold two opposing demands at once: one coherent global identity across seven products — LegalOn, SalesOn, CorporateOn, WorkOn, CXOn, DealOn, GovernOn — and enough room for each to stand on its own. The resolution was the "ON" concept: always on, always intelligent, always working — a shared lockup carried by every product, each with its own palette and identity.</p>
-            <a href="#" class="text-link">See Project <span class="arrow">&rarr;</span></a>
+            <a href="/work/legalon/" class="text-link">See Project <span class="arrow">&rarr;</span></a>
           </div>
         </div>
       </article>
@@ -313,7 +315,7 @@
           </div>
           <div class="project-body">
             <p>Adobe wanted to democratize image editing. Adobe's new AI-powered desktop image editor transforms complex editing into one-click operations, making professional-quality enhancement accessible to marketers, SMBs, office workers, and consumers.</p>
-            <a href="#" class="text-link">See Project <span class="arrow">&rarr;</span></a>
+            <a href="/work/adobe-express-photos/" class="text-link">See Project <span class="arrow">&rarr;</span></a>
           </div>
         </div>
       </article>
@@ -338,7 +340,7 @@
           </div>
           <div class="project-body">
             <p>Search at Walmart is used by millions every day, which made it both the highest-leverage place to introduce AI and the easiest place to lose trust. The position was that AI should layer onto search rather than replace it, tested in reversible ways on top of a stable core. That framing became the foundation for multimodal search, an AI wizard with AR, and GenAI fashion discovery.</p>
-            <a href="#" class="text-link">See Project <span class="arrow">&rarr;</span></a>
+            <a href="/work/walmart/" class="text-link">See Project <span class="arrow">&rarr;</span></a>
           </div>
         </div>
       </article>
@@ -363,7 +365,7 @@
           </div>
           <div class="project-body">
             <p>Adobe Express needed to scale beyond a standalone tool into an enterprise-ready, embeddable platform. I led design for the Express Extensibility team, shaping embedded editors, SDK integrations, and a governed plugin marketplace.</p>
-            <a href="#" class="text-link">See Project <span class="arrow">&rarr;</span></a>
+            <a href="/work/adobe-express-enterprise/" class="text-link">See Project <span class="arrow">&rarr;</span></a>
           </div>
         </div>
       </article>
@@ -388,7 +390,7 @@
           </div>
           <div class="project-body">
             <p>Modere had a global wellness brand and a Japanese storefront that worked as a transaction and nothing more. Japanese wellness shoppers buy on trust, built through community and evidence rather than product claims. The redesign held the global brand system intact while rebuilding the experience around how people in Japan actually decide: personalized discovery, community content, and storytelling instead of a catalog.</p>
-            <a href="#" class="text-link">See Project <span class="arrow">&rarr;</span></a>
+            <a href="/work/modere/" class="text-link">See Project <span class="arrow">&rarr;</span></a>
           </div>
         </div>
       </article>
@@ -413,7 +415,7 @@
           </div>
           <div class="project-body">
             <p>Connecting the dots from collaborative ideation to rapid screen design to final presentation, Modular plugins allow seamless designer workflow in a single app. These visionary tools preceded by several years what the competition eventually released.</p>
-            <a href="#" class="text-link">See Project <span class="arrow">&rarr;</span></a>
+            <a href="/work/modular-suite-xd/" class="text-link">See Project <span class="arrow">&rarr;</span></a>
           </div>
         </div>
       </article>
@@ -1091,13 +1093,10 @@
       document.getElementById('modal-body').scrollTop = 0;
     }
 
-    // "See Project" link clicks
-    document.querySelectorAll('.project').forEach((el, i) => {
-      el.querySelector('.text-link').addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal(i);
-      });
-    });
+    // "See Project" links now navigate to real project pages (/work/<slug>/)
+    // instead of opening the in-page modal — the modal code below is kept
+    // for now (removal comes in a later cleanup pass) but is no longer
+    // wired to these links.
 
     document.getElementById('modal-close').addEventListener('click', closeModal);
     document.getElementById('modal-prev').addEventListener('click', () => navigateModal(-1));

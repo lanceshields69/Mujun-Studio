@@ -1,0 +1,202 @@
+/* Project detail pages (e.g. /work/legalon/) — wide, standalone version
+   of the homepage's project modal. Reuses styles.css's .modal-* classes
+   for layout/theming, but those classes were authored for the modal's
+   narrow card (project-modal is 80vw, capped at 92vh, 8px radius) —
+   .modal-content itself only carries padding, no width/height/overflow
+   constraints of its own, but every override below is still scoped
+   under .project-page so nothing here can ever reach the real modal
+   elsewhere on the site. Do not edit styles.css or rename any modal-*
+   class from this file. */
+
+.project-hero-full {
+  width: 100%;
+  aspect-ratio: 16 / 6;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.project-hero-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .footer is only ever loaded alongside project.css on project pages
+   (the homepage doesn't link this stylesheet), so no .project-page
+   scoping is needed here. */
+.footer {
+  margin-top: 50px;
+}
+
+/* Page container — full viewport width like the homepage, not a
+   centered card. Gutters live here (roomier than the homepage's 16px)
+   rather than on .modal-content, so every section below aligns to the
+   same left/right edges. */
+.project-page {
+  max-width: none;
+  margin: 0;
+  padding-left: clamp(20px, 4vw, 60px);
+  padding-right: clamp(20px, 4vw, 60px);
+}
+
+.project-page .modal-content {
+  max-width: none;
+  width: auto;
+  max-height: none;
+  overflow: visible;
+  border-radius: 0;
+  padding: 48px 0 32px;
+}
+
+/* Prev/Next bar is a sibling of .modal-content (both direct children of
+   .project-page) with its own fixed 48px horizontal padding in
+   styles.css — zero it out so the row aligns to .project-page's own
+   gutters instead of adding a second, narrower inset. */
+.project-page .modal-bottombar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Title/role row — confirm it spans the full (now wide) container
+   rather than any inherited narrow width. */
+.project-page .modal-top-row {
+  width: 100%;
+}
+
+/* MY ROLE + metrics column — the modal's 280px sidebar width read too
+   narrow on the full-width page; widened 30% (280 * 1.3 = 364px). Only
+   above the 1024px breakpoint: styles.css switches .modal-right to
+   width:100% once .modal-top-row stacks to a single column, and this
+   two-class selector's higher specificity would otherwise pin it at
+   364px there too, orphaning it at less than full width. */
+@media (min-width: 1025px) {
+  .project-page .modal-right {
+    width: 364px;
+  }
+}
+
+/* Title block — tightened per Figma (was inheriting the modal's tighter
+   sidebar-card spacing, which read as too loose on a full page). */
+.project-page .modal-title {
+  font-size: 36px;
+  margin-bottom: 4px;
+}
+
+.project-page .modal-subtitle {
+  margin-bottom: 4px;
+}
+
+.project-tension {
+  color: var(--text-accent);
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+/* Description sits inline in .modal-left, right after the title block
+   (see index.html) rather than promoted to its own full-width block.
+   Readable measure: 88ch (70ch * 1.25) so it reads wider on desktop
+   while still stopping short of edge-to-edge on the full-width page. */
+.project-page .modal-description {
+  max-width: 88ch;
+  margin-top: 0;
+}
+
+/* Role / metric labels — Figma uses a heavier, smaller label than the
+   modal's sidebar version. */
+.project-page .modal-section-label {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.52px;
+  line-height: 0.86;
+}
+
+/* Challenge/Solution headings are now full descriptive sentences (GEO —
+   self-contained when extracted out of context), not short uppercase
+   labels like MY ROLE, so they take the paragraph's own 16px size below
+   them. line-height loosened from the label's 0.86 since these can wrap
+   to two lines and 0.86 would clip the second line. */
+.project-page .modal-challenge .modal-section-label,
+.project-page .modal-solution .modal-section-label {
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.project-page .modal-role-text {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.44px;
+  max-width: 36ch;
+}
+
+.project-page .modal-metric-value {
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+
+.project-page .modal-metric-label {
+  font-size: 13px;
+}
+
+/* Challenge / Solution — full-width two-column row already (flex, gap
+   48px in styles.css); cap each paragraph's own measure so a single
+   column doesn't stretch uncomfortably wide on very large viewports. */
+.project-page .modal-challenge p,
+.project-page .modal-solution p {
+  max-width: 60ch;
+}
+
+.project-testimonial {
+  margin-bottom: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-rule);
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.project-testimonial-quote {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  max-width: 60ch;
+}
+
+/* Image stack — full container width (no max-width of its own to
+   override — .modal-image-grid img was already width:100%), large
+   crop per Figma instead of each image's native height. Bug fix:
+   .modal-image-grid img only set width:100% in styles.css, leaving the
+   height="…" HTML attribute in effect as a literal pixel height
+   (browsers only auto-derive height from the width/height attributes
+   when neither is overridden by CSS) — that's what was stretching every
+   image. aspect-ratio + object-fit: cover fixes the stretch and matches
+   the Figma crop treatment; the border used inside the modal is dropped
+   since Figma shows plain edge-to-edge images here. */
+.project-page .modal-image-grid {
+  gap: 48px;
+}
+
+.project-page .modal-image-grid img {
+  width: 100%;
+  aspect-ratio: 2000 / 1307;
+  object-fit: cover;
+  height: auto;
+  border: none;
+  border-radius: 0;
+}
+
+/* Video — already width:100% / 16:9 (560:315) in styles.css and now
+   inherits the wider container automatically; no override needed
+   beyond confirming no stray max-width applies here. */
+.project-page .modal-video {
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .project-testimonial-quote {
+    font-size: 20px;
+  }
+}
