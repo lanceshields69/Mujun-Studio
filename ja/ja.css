@@ -13,7 +13,8 @@ body {
 .service-title,
 .stats-intro-text,
 .section-label,
-.modal-title {
+.modal-title,
+.work-hero-title {
   letter-spacing: 0;
 }
 
@@ -21,7 +22,8 @@ body {
 .thesis-heading,
 .service-title,
 .modal-title,
-.faq-question {
+.faq-question,
+.work-card-title {
   line-height: 1.5;
 }
 
@@ -32,7 +34,8 @@ body {
 .modal-description,
 .modal-challenge p:last-child,
 .modal-solution p:last-child,
-.faq-answer {
+.faq-answer,
+.work-hero-intro {
   line-height: 1.9;
 }
 
@@ -86,7 +89,10 @@ body {
 .modal-testimonial-role,
 .text-link,
 .faq-question,
-.faq-answer {
+.faq-answer,
+.work-hero-title,
+.work-hero-intro,
+.work-card-title {
   overflow-wrap: anywhere;
 }
 
