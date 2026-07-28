@@ -12,12 +12,12 @@
 }
 
 .work-hero-title {
-  font-size: 64px;
+  font-size: 72px;
   font-weight: 900;
-  letter-spacing: -2.56px;
+  letter-spacing: -2px;
   text-transform: uppercase;
   line-height: 1;
-  color: var(--text-primary);
+  color: var(--text-accent);
 }
 
 .work-hero-intro {
