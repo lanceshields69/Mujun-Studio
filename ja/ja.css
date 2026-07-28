@@ -12,20 +12,25 @@ body {
 .project-name,
 .service-title,
 .stats-intro-text,
-.section-label {
+.section-label,
+.modal-title {
   letter-spacing: 0;
 }
 
 /* 2. Open the leading — Japanese needs more room than Latin. */
 .thesis-heading,
-.service-title {
+.service-title,
+.modal-title {
   line-height: 1.5;
 }
 
 .thesis-body,
 .service-body,
 .project-body p,
-.stats-intro-bio {
+.stats-intro-bio,
+.modal-description,
+.modal-challenge p:last-child,
+.modal-solution p:last-child {
   line-height: 1.9;
 }
 
@@ -72,6 +77,11 @@ body {
 .modal-description,
 .modal-role-text,
 .modal-testimonial-quote,
+.modal-section-label,
+.project-tension,
+.modal-metric-label,
+.modal-testimonial-name,
+.modal-testimonial-role,
 .text-link {
   overflow-wrap: anywhere;
 }
