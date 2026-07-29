@@ -135,8 +135,23 @@ p {
 .nav-logo-gif {
   width: 50px;
   height: 50px;
-  display: block;
   object-fit: contain;
+}
+
+.nav-logo-gif--dark {
+  display: block;
+}
+
+.nav-logo-gif--light {
+  display: none;
+}
+
+[data-theme="light"] .nav-logo-gif--dark {
+  display: none;
+}
+
+[data-theme="light"] .nav-logo-gif--light {
+  display: block;
 }
 
 .nav-links {
