@@ -1317,7 +1317,6 @@ p {
 .connect-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
 }
@@ -1325,8 +1324,10 @@ p {
 .connect-cta-group {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+  flex: 1 1 auto;
 }
 
 .connect-heading {
