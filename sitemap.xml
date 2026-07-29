@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://mujunstudio.com/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/work/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/work/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/work/legalon/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/legalon/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/legalon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/legalon/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/work/legalon/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/legalon/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/legalon/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/legalon/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/work/adobe-express-photos/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/adobe-express-photos/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/adobe-express-photos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/adobe-express-photos/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/work/adobe-express-photos/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/adobe-express-photos/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/adobe-express-photos/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/adobe-express-photos/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/work/walmart/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/walmart/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/walmart/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/walmart/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/work/walmart/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/walmart/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/walmart/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/walmart/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/work/adobe-express-enterprise/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/adobe-express-enterprise/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/adobe-express-enterprise/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/adobe-express-enterprise/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/work/adobe-express-enterprise/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/adobe-express-enterprise/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/adobe-express-enterprise/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/adobe-express-enterprise/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/work/modere/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/modere/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/modere/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/modere/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/work/modere/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/modere/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/modere/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/modere/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/work/modular-suite-xd/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/modular-suite-xd/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/modular-suite-xd/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/modular-suite-xd/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/work/modular-suite-xd/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/work/modular-suite-xd/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/work/modular-suite-xd/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/modular-suite-xd/" />
+  </url>
+
+</urlset>

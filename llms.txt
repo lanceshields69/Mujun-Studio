@@ -1,0 +1,27 @@
+# Mujun Studio
+
+> Mujun Studio is a bilingual AI-native product design studio working across
+> the U.S. and Japan on brand, product, and digital experience. Founded by
+> Lance Shields, a designer with twenty years of design leadership at Adobe
+> and Walmart, and brand/product work with LegalOn, Visa, Hitachi, and Red
+> Bull. The name comes from 矛盾 (mujun), the Japanese word for contradiction,
+> reflecting the studio's belief that the strongest brands and products hold
+> two opposing qualities deliberately — approachable but premium, fast but
+> trustworthy — rather than resolving the tension away.
+
+## Studio
+- [Home (English)](https://mujunstudio.com/): Studio thesis, practice areas, and origin story.
+- [Home (Japanese)](https://mujunstudio.com/ja/): 日本語版ホームページ。
+
+## Work
+- [Work index (English)](https://mujunstudio.com/work/)
+- [Work index (Japanese)](https://mujunstudio.com/ja/work/)
+- [LegalOn — Global AI Brand Platform](https://mujunstudio.com/work/legalon/) / [日本語](https://mujunstudio.com/ja/work/legalon/)
+- [Adobe Express Photos — 0-to-1 AI Product Design](https://mujunstudio.com/work/adobe-express-photos/) / [日本語](https://mujunstudio.com/ja/work/adobe-express-photos/)
+- [Walmart — AI-First Shopping Experience](https://mujunstudio.com/work/walmart/) / [日本語](https://mujunstudio.com/ja/work/walmart/)
+- [Adobe Express Enterprise — Embed SDK + Plugin Ecosystem](https://mujunstudio.com/work/adobe-express-enterprise/) / [日本語](https://mujunstudio.com/ja/work/adobe-express-enterprise/)
+- [Modere — Japanese Market Platform Redesign](https://mujunstudio.com/work/modere/) / [日本語](https://mujunstudio.com/ja/work/modere/)
+- [Modular Suite for XD — Design Collaboration Tools](https://mujunstudio.com/work/modular-suite-xd/) / [日本語](https://mujunstudio.com/ja/work/modular-suite-xd/)
+
+## Contact
+hello@mujunstudio.com
