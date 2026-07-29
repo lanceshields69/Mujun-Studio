@@ -14,7 +14,8 @@ body {
 .stats-intro-text,
 .section-label,
 .modal-title,
-.work-hero-title {
+.work-hero-title,
+.contact-modal-headline {
   letter-spacing: 0;
 }
 
@@ -23,7 +24,8 @@ body {
 .service-title,
 .modal-title,
 .faq-question,
-.work-card-title {
+.work-card-title,
+.contact-modal-headline {
   line-height: 1.5;
 }
 
@@ -92,7 +94,11 @@ body {
 .faq-answer,
 .work-hero-title,
 .work-hero-intro,
-.work-card-title {
+.work-card-title,
+.contact-modal-headline,
+.contact-modal-field label,
+.contact-modal-success p,
+.contact-modal-error-banner p {
   overflow-wrap: anywhere;
 }
 

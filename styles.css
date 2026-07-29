@@ -1307,6 +1307,13 @@ p {
   flex-wrap: wrap;
 }
 
+.connect-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .connect-heading {
   font-size: 37px;
   line-height: 0.95;
@@ -1341,6 +1348,242 @@ p {
 
 .scan-cta-arrow {
   font-weight: 700;
+}
+
+/* Contact Modal */
+.contact-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+[data-theme="light"] .contact-modal-overlay {
+  background: rgba(165, 165, 165, 0.5);
+}
+
+.contact-modal-overlay.active {
+  display: flex;
+}
+
+.contact-modal-overlay.visible {
+  opacity: 1;
+}
+
+.contact-modal {
+  width: 100%;
+  max-width: 540px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-rule);
+  border-radius: 4px;
+  transform: scale(0.96);
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.contact-modal-overlay.visible .contact-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.contact-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 32px 32px 25px;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.contact-modal-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-modal-header-text .section-label {
+  margin-bottom: 0;
+}
+
+.contact-modal-headline {
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.contact-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-rule);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-modal-close:hover {
+  background: var(--border-rule);
+}
+
+.contact-modal-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.contact-modal-body {
+  padding: 32px;
+}
+
+.contact-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-modal-field label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.contact-modal-field input,
+.contact-modal-field textarea {
+  width: 100%;
+  padding: 13px 17px;
+  background: rgba(44, 71, 54, 0.35);
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.contact-modal-field input {
+  height: 50px;
+}
+
+.contact-modal-field textarea {
+  height: 122px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.contact-modal-field input::placeholder,
+.contact-modal-field textarea::placeholder {
+  color: #3C6149;
+}
+
+[data-theme="light"] .contact-modal-field input::placeholder,
+[data-theme="light"] .contact-modal-field textarea::placeholder {
+  color: #CFE5D7;
+}
+
+.contact-modal-field input:focus,
+.contact-modal-field textarea:focus {
+  outline: none;
+  border-color: var(--border-button);
+}
+
+.contact-modal-field-error {
+  font-size: 13px;
+  color: #FF8A80;
+  min-height: 0;
+}
+
+[data-theme="light"] .contact-modal-field-error {
+  color: #C62828;
+}
+
+.contact-modal-field-error:empty {
+  display: none;
+}
+
+.contact-modal-submit-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-modal-submit {
+  font-size: 16px;
+}
+
+[data-fs-success],
+[data-fs-error] {
+  display: none;
+}
+
+[data-fs-success][data-fs-active],
+[data-fs-error][data-fs-active] {
+  display: block;
+}
+
+[data-fs-success][data-fs-active] ~ #contact-modal-form {
+  display: none;
+}
+
+.contact-modal-body .contact-modal-success,
+.contact-modal-body .contact-modal-error-banner {
+  padding: 16px;
+  border: 1px solid var(--border-rule);
+  border-radius: 2px;
+  /* !important: overrides a background-color the @formspree/ajax runtime
+     injects into its own <style> tag at load time, which otherwise wins
+     the cascade tie (equal specificity, later in source order). */
+  background: rgba(63, 232, 61, 0.12) !important;
+}
+
+.contact-modal-body .contact-modal-error-banner {
+  background: rgba(255, 107, 107, 0.12) !important;
+}
+
+.contact-modal-success p,
+.contact-modal-error-banner p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.contact-modal-error-banner a {
+  color: var(--text-accent);
+}
+
+@media (max-width: 768px) {
+  .contact-modal-header {
+    padding: 32px 24px 33px;
+  }
+
+  .contact-modal-body {
+    padding: 32px 24px;
+  }
+
+  .contact-modal-submit-row .scan-cta {
+    width: auto;
+    padding: 17px 29px;
+    font-size: 16px;
+  }
 }
 
 /* Design Intelligence Tool Modal */
