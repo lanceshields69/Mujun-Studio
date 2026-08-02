@@ -98,7 +98,15 @@ body {
 .contact-modal-headline,
 .contact-modal-field label,
 .contact-modal-success p,
-.contact-modal-error-banner p {
+.contact-modal-error-banner p,
+.journal-card-title,
+.journal-card-excerpt,
+.article-title,
+.article-subhead,
+.article-h2,
+.article-p,
+.article-author-bio,
+.article-author-name {
   overflow-wrap: anywhere;
 }
 

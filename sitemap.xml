@@ -162,4 +162,66 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/work/modular-suite-xd/" />
   </url>
 
+  <url>
+    <loc>https://mujunstudio.com/journal/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/journal/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/journal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/journal/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/journal/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mujunstudio.com/journal/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://mujunstudio.com/ja/journal/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mujunstudio.com/journal/" />
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/journal/ai-native-designer-phase-one/</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/journal/stop-adding-ai-to-the-design-process/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/journal/contradiction-that-became-a-studio/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/journal/how-i-use-ai/</loc>
+    <lastmod>2026-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/journal/designing-for-awareness-how-multimodal/</loc>
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mujunstudio.com/ja/journal/stop-treating-ai-like-cheating-on-your-homework/</loc>
+    <lastmod>2025-11-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
