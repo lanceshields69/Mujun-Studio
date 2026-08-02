@@ -133,9 +133,16 @@
 
 .article-hero-image {
   width: 100%;
-  aspect-ratio: 1200 / 628;
+  height: 650px;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .article-hero-image {
+    height: auto;
+    aspect-ratio: 2000 / 1307;
+  }
 }
 
 /* ---- Article: StatBar (only where an article has real stats) ---- */
