@@ -88,20 +88,14 @@
     ],
     "stats": [
       { "value": "85%", "label": "ナレッジワーカーの85%がAIを使用" },
-      { "value": "29%", "label": "実際の業務フローに組み込めているのは29%にとどまる" },
+      { "value": "29%", "label": "実際の業務フローに組み込めているのは29%" },
       { "value": "1%", "label": "自社がAIにおいて成熟していると考えるリーダーは1%" }
     ],
     "citations": [
-      { "name": "Harvard Business School", "detail": "758 consultants, AI task study" },
-      { "name": "Atlassian 2026 State of Teams Report" },
-      { "name": "McKinsey AI Maturity Survey" },
-      { "name": "Stanford Digital Economy Lab", "detail": "51 enterprise AI implementations" }
-    ],
-    "seriesArticles": [
-      { "part": 1, "title": "AIネイティブ・デザイナーは、フェーズ1にすぎなかった", "status": "current", "url": "/ja/journal/ai-native-designer-phase-one/" },
-      { "part": 2, "title": "Stop Adding AI to the Design Process. Re-engineer It.", "status": "upcoming", "url": null },
-      { "part": 3, "title": "Coming soon", "status": "empty", "url": null },
-      { "part": 4, "title": "Coming soon", "status": "empty", "url": null }
+      { "name": "Harvard Business School — コンサルタント758人を対象としたAIタスク研究" },
+      { "name": "Atlassian 2026年版 State of Teams Report" },
+      { "name": "McKinsey AI成熟度調査" },
+      { "name": "Stanford Digital Economy Lab — 51件の企業向けAI導入事例" }
     ]
   },
   "en": {

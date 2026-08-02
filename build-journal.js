@@ -250,10 +250,10 @@ const THEME_HEAD_SCRIPT = `  <script>
   </script>`;
 
 function fontLink(lang) {
-  const jpWeights = lang === 'ja' ? '400;500;900' : '900';
+  const jpWeights = lang === 'ja' ? '400;500;600;900' : '900';
   return `  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,900&family=Noto+Sans+JP:wght@${jpWeights}&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">`;
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,900&family=Noto+Sans+JP:wght@${jpWeights}&family=Lora:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">`;
 }
 
 function esc(s) {
@@ -558,6 +558,46 @@ ${jsonLd({
     return `        <div class="${cls}">${heading}\n${paras}\n        </div>`;
   }).join('\n');
 
+  const statBarHtml = j.stats && j.stats.length ? `
+    <div class="stat-bar">
+      <div class="stat-bar-inner">
+${j.stats.map((s) => `        <div class="stat-bar-item">
+          <p class="stat-bar-value">${esc(s.value)}</p>
+          <p class="stat-bar-label">${esc(s.label)}</p>
+        </div>`).join('\n')}
+      </div>
+    </div>` : '';
+
+  const hasCitations = j.citations && j.citations.length;
+  const authorCardHtml = hasCitations
+    ? `      <div class="article-author-card">
+        <div class="article-extras-row">
+          <div class="article-citations-col">
+            <p class="article-eyebrow">参考文献</p>
+            <div class="article-citations-list">
+${j.citations.map((c) => `              <p class="article-citation-item">${esc(c.name)}</p>`).join('\n')}
+            </div>
+          </div>
+          <div class="article-author-col">
+            <p class="article-eyebrow">著者について</p>
+            <p class="article-author-name">${esc(j.author)}</p>
+            <p class="article-author-bio">${esc(j.authorBio)}</p>
+            <p class="article-author-link text-link"><a href="${authorUrl}" target="_blank" rel="noopener"><span class="arrow">→</span> LinkedInで</a></p>
+          </div>
+        </div>
+      </div>`
+    : `      <div class="article-author-card">
+        <div class="article-author-row">
+          <img class="article-author-avatar" src="${imagesPath}lance-shields.jpg" width="120" height="120" alt="${esc(j.author)}" loading="lazy">
+          <div class="article-author-body">
+            <p class="article-author-eyebrow">著者について</p>
+            <p class="article-author-name">${esc(j.author)}</p>
+            <p class="article-author-bio">${esc(j.authorBio)}</p>
+            <p class="article-author-link text-link"><a href="${authorUrl}" target="_blank" rel="noopener"><span class="arrow">→</span> LinkedInで</a></p>
+          </div>
+        </div>
+      </div>`;
+
   const bodyMain = `    <div class="article-hero">
       <div class="article-hero-inner">
         <div class="article-meta">
@@ -570,18 +610,10 @@ ${jsonLd({
       </div>
       <img class="article-hero-image" src="${imagesPath}${article.image}" width="${article.imageWidth}" height="${article.imageHeight}" alt="${esc(j.heroImageAlt)}" loading="eager">
     </div>
-
+${statBarHtml}
     <div class="article-body">
 ${sectionsHtml}
-      <div class="article-author-card">
-        <img class="article-author-avatar" src="${imagesPath}lance-shields.jpg" width="120" height="120" alt="${esc(j.author)}" loading="lazy">
-        <div class="article-author-body">
-          <p class="article-author-eyebrow">著者について</p>
-          <p class="article-author-name">${esc(j.author)}</p>
-          <p class="article-author-bio">${esc(j.authorBio)}</p>
-          <p class="article-author-link text-link"><a href="${authorUrl}" target="_blank" rel="noopener"><span class="arrow">→</span> LinkedInで</a></p>
-        </div>
-      </div>
+${authorCardHtml}
     </div>
 
     <nav class="article-nav" aria-label="記事ナビゲーション">
