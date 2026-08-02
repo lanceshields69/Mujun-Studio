@@ -154,9 +154,10 @@ function footer(lang, imagesPath) {
           <div class="footer-group">
             <p class="footer-heading">${office.social}</p>
             <div class="footer-links">
-              <a href="https://www.linkedin.com/in/lanceshields/" class="footer-link">LinkedIn</a>
-              <a href="https://www.instagram.com/lanceshields.photos/" class="footer-link">Instagram</a>
-              <a href="https://designamplified.substack.com/" class="footer-link">Substack</a>
+              <a href="https://www.linkedin.com/company/mujun-studio/" class="footer-link">LinkedIn</a>
+              <a href="https://x.com/mujunstudio" class="footer-link">Twitter</a>
+              <a href="https://www.instagram.com/mujunstudio" class="footer-link">Instagram</a>
+              <a href="https://note.com/mujunstudio" class="footer-link">Note</a>
             </div>
           </div>
         </div>
@@ -395,9 +396,10 @@ ${jsonLd({
   areaServed: ['US', 'JP'],
   knowsLanguage: ['en', 'ja'],
   sameAs: [
-    'https://www.linkedin.com/in/lanceshields/',
-    'https://www.instagram.com/lanceshields.photos/',
-    'https://designamplified.substack.com/',
+    'https://www.linkedin.com/company/mujun-studio/',
+    'https://x.com/mujunstudio',
+    'https://www.instagram.com/mujunstudio',
+    'https://note.com/mujunstudio',
   ],
 })}
 ${jsonLd({
@@ -536,9 +538,10 @@ ${jsonLd({
   areaServed: ['US', 'JP'],
   knowsLanguage: ['en', 'ja'],
   sameAs: [
-    'https://www.linkedin.com/in/lanceshields/',
-    'https://www.instagram.com/lanceshields.photos/',
-    'https://designamplified.substack.com/',
+    'https://www.linkedin.com/company/mujun-studio/',
+    'https://x.com/mujunstudio',
+    'https://www.instagram.com/mujunstudio',
+    'https://note.com/mujunstudio',
   ],
 })}
 ${jsonLd({
