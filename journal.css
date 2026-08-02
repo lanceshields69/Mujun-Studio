@@ -84,6 +84,12 @@
   padding-bottom: 64px;
 }
 
+/* When a StatBar follows, the hero should be flush with the image —
+   the 64px gap moves to after the StatBar instead. */
+.article-hero:has(+ .stat-bar) {
+  padding-bottom: 0;
+}
+
 .article-hero-inner {
   display: flex;
   flex-direction: column;
@@ -140,6 +146,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 64px;
 }
 
 .stat-bar-inner {
