@@ -480,12 +480,16 @@ function buildArticlePage(article, allArticles) {
 
   const authorUrl = 'https://www.linkedin.com/in/lanceshields/';
 
+  // isPartOf/series schema is scoped to just the two Upstream pieces.
   const seriesIndex = UPSTREAM_SERIES.indexOf(article.slug);
   const inSeries = seriesIndex !== -1;
-  const prevSlug = inSeries && seriesIndex > 0 ? UPSTREAM_SERIES[seriesIndex - 1] : null;
-  const nextSlug = inSeries && seriesIndex < UPSTREAM_SERIES.length - 1 ? UPSTREAM_SERIES[seriesIndex + 1] : null;
-  const prevArticle = prevSlug ? allArticles.find((a) => a.slug === prevSlug) : null;
-  const nextArticle = nextSlug ? allArticles.find((a) => a.slug === nextSlug) : null;
+
+  // Bottom-of-article prev/next nav is chronological across all articles
+  // (allArticles is sorted newest-first) — "next" is the newer post,
+  // "previous" is the older one. Not restricted to the series pair.
+  const chronoIndex = allArticles.findIndex((a) => a.slug === article.slug);
+  const nextArticle = chronoIndex > 0 ? allArticles[chronoIndex - 1] : null;
+  const prevArticle = chronoIndex < allArticles.length - 1 ? allArticles[chronoIndex + 1] : null;
 
   const head = `  <title>${esc(title)}</title>
   <meta name="description" content="${esc(j.excerpt)}">
