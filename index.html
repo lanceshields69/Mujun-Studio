@@ -1460,6 +1460,19 @@
       if (e.target === e.currentTarget) closeContactModal();
     });
 
+    // Deep-link support: ?contact=open auto-opens this page's own contact
+    // modal on load (for linking in from external tools). Strips the param
+    // via replaceState so a refresh doesn't reopen it.
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('contact') !== 'open') return;
+      openContactModal(document.getElementById('contact-modal-btn'));
+      params.delete('contact');
+      const query = params.toString();
+      const newUrl = window.location.pathname + (query ? '?' + query : '') + window.location.hash;
+      history.replaceState(null, '', newUrl);
+    })();
+
     // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
