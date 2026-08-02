@@ -601,6 +601,72 @@ ${sectionsHtml}
 }
 
 // ---------------------------------------------------------------------
+// Homepage Journal carousel (index.html, ja/index.html)
+// ---------------------------------------------------------------------
+
+const CAROUSEL_START = '<!-- JOURNAL_CAROUSEL:START -->';
+const CAROUSEL_END = '<!-- JOURNAL_CAROUSEL:END -->';
+
+function buildHomeCarousel(lang, articles) {
+  const isJa = lang === 'ja';
+  const imagesPath = isJa ? '../images/' : 'images/';
+  const badge = isJa ? 'ジャーナル' : 'JOURNAL';
+  const viewAll = isJa ? 'すべての記事を見る →' : 'View all articles →';
+  const viewAllHref = isJa ? '/ja/journal/' : '/journal/';
+  const readLabel = isJa ? '記事を読む' : 'Read';
+  const prevLabel = isJa ? '前の記事へ' : 'Previous articles';
+  const nextLabel = isJa ? '次の記事へ' : 'Next articles';
+
+  const cardsHtml = articles.map((a) => {
+    const t = isJa ? a.ja.title : a.en.title;
+    const alt = isJa ? a.ja.thumbnailAlt : `Thumbnail for "${a.en.title}"`;
+    const href = isJa ? `/ja/journal/${a.slug}/` : a.en.substackUrl;
+    const linkAttrs = isJa ? '' : ' target="_blank" rel="noopener"';
+    return `          <a href="${href}" class="journal-carousel-card"${linkAttrs}>
+            <div class="journal-carousel-card-image-wrap">
+              <img class="journal-carousel-card-image" src="${imagesPath}${a.image}" width="${a.imageWidth}" height="${a.imageHeight}" alt="${esc(alt)}" loading="lazy">
+            </div>
+            <div class="journal-carousel-card-body">
+              <p class="journal-carousel-card-title">${esc(t)}</p>
+              <p class="journal-carousel-card-link">→ ${readLabel}</p>
+            </div>
+          </a>`;
+  }).join('\n');
+
+  return `${CAROUSEL_START}
+    <section id="journal" class="journal-carousel-section">
+      <div class="journal-carousel-header">
+        <span class="journal-carousel-badge fade-in">${badge}</span>
+        <div class="journal-carousel-controls fade-in">
+          <a href="${viewAllHref}" class="journal-carousel-viewall">${viewAll}</a>
+          <div class="journal-carousel-arrows">
+            <button type="button" class="journal-carousel-arrow" data-carousel-prev aria-label="${prevLabel}">←</button>
+            <button type="button" class="journal-carousel-arrow" data-carousel-next aria-label="${nextLabel}">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="journal-carousel-track" data-carousel-track>
+${cardsHtml}
+      </div>
+    </section>
+    ${CAROUSEL_END}`;
+}
+
+function patchHomepage(filePath, lang, articles) {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const startIdx = content.indexOf(CAROUSEL_START);
+  const endIdx = content.indexOf(CAROUSEL_END);
+  if (startIdx === -1 || endIdx === -1) {
+    throw new Error(`${filePath}: JOURNAL_CAROUSEL markers not found — insert them once by hand between Studio and FAQs.`);
+  }
+  const before = content.slice(0, startIdx);
+  const after = content.slice(endIdx + CAROUSEL_END.length);
+  const next = `${before}${buildHomeCarousel(lang, articles)}${after}`;
+  fs.writeFileSync(filePath, next);
+  console.log(`Patched Journal carousel into ${filePath}`);
+}
+
+// ---------------------------------------------------------------------
 // Run
 // ---------------------------------------------------------------------
 
@@ -626,6 +692,9 @@ function main() {
     fs.writeFileSync(path.join(dir, 'index.html'), buildArticlePage(article, articles));
     console.log(`Wrote /ja/journal/${article.slug}/index.html`);
   }
+
+  patchHomepage(path.join(ROOT, 'index.html'), 'en', articles);
+  patchHomepage(path.join(ROOT, 'ja', 'index.html'), 'ja', articles);
 }
 
 main();

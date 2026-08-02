@@ -1,5 +1,6 @@
-/* Journal index (/journal/, /ja/journal/) and article template
-   (/ja/journal/[slug]/). Shared EN + JA. Not loaded elsewhere.
+/* Journal index (/journal/, /ja/journal/), article template
+   (/ja/journal/[slug]/), and the homepage Journal carousel section
+   (index.html, ja/index.html). Shared EN + JA.
    Reuses .work-hero / .work-hero-title / .work-hero-intro (work-index.css)
    for the index hero, and .text-link (styles.css) for arrow links. */
 
@@ -300,5 +301,170 @@
 
   .article-author-card {
     flex-direction: column;
+  }
+}
+
+/* ---- Homepage: Journal carousel section ---- */
+
+.journal-carousel-section {
+  padding: 0 15px 50px;
+  max-width: 1920px;
+  border-top: 1px solid var(--border-rule);
+}
+
+.journal-carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 1px 48px;
+}
+
+.journal-carousel-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-brand);
+  color: var(--accent-ink);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.52px;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  border-radius: 2px;
+}
+
+.journal-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.journal-carousel-viewall {
+  font-size: 16px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.journal-carousel-viewall:hover {
+  color: var(--text-primary);
+}
+
+.journal-carousel-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.journal-carousel-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-button);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-accent);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.journal-carousel-arrow:hover {
+  background: var(--bg-surface);
+}
+
+.journal-carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+  background: none;
+}
+
+.journal-carousel-track {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+  cursor: grab;
+  scrollbar-width: none;
+}
+
+.journal-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.journal-carousel-track.dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.journal-carousel-card {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 440px;
+  max-width: 82vw;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-rule);
+  background: var(--bg-canvas);
+  text-decoration: none;
+  color: inherit;
+}
+
+.journal-carousel-card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+}
+
+.journal-carousel-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.journal-carousel-card-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 34, 15, 0.1);
+}
+
+.journal-carousel-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+}
+
+.journal-carousel-card-title {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--text-primary);
+}
+
+.journal-carousel-card-link {
+  font-size: 14px;
+  color: var(--text-accent);
+}
+
+@media (max-width: 640px) {
+  .journal-carousel-header {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .journal-carousel-card {
+    width: 320px;
+  }
+
+  .journal-carousel-card-image-wrap {
+    height: 210px;
   }
 }
