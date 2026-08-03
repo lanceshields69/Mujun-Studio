@@ -1559,6 +1559,38 @@
       }
     });
 
+    // Align the Reel video's width/position to the first two Work tiles
+    // below it, so it lines up visually with them. Only above the mobile
+    // breakpoint — at 768px and under, tiles are 72% wide and matching two
+    // of them would overflow the viewport, so the reel just stays full-width.
+    (function () {
+      const reelVideo = document.querySelector('.reel-video');
+      const reelSection = document.querySelector('.reel-section');
+      const grid = document.querySelector('#work .image-grid');
+      if (!reelVideo || !reelSection || !grid) return;
+
+      function alignReelWidth() {
+        if (window.innerWidth <= 768) {
+          reelVideo.style.width = '';
+          reelVideo.style.marginLeft = '';
+          return;
+        }
+        const imgs = grid.querySelectorAll('img');
+        if (imgs.length < 2) return;
+        const img1 = imgs[0].getBoundingClientRect();
+        const img2 = imgs[1].getBoundingClientRect();
+        const sectionRect = reelSection.getBoundingClientRect();
+        const paddingLeft = parseFloat(getComputedStyle(reelSection).paddingLeft) || 0;
+        const contentLeft = sectionRect.left + paddingLeft;
+        reelVideo.style.width = (img2.right - img1.left) + 'px';
+        reelVideo.style.marginLeft = (img1.left - contentLeft) + 'px';
+      }
+
+      window.addEventListener('load', alignReelWidth);
+      window.addEventListener('resize', alignReelWidth);
+      alignReelWidth();
+    })();
+
     // Drag-to-scroll for image grids
     document.querySelectorAll('.image-grid').forEach(grid => {
       let isDown = false;
