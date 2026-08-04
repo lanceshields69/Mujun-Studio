@@ -88,8 +88,8 @@ function nav(lang, imagesPath, journalHref, langSwitch) {
   return `  <!-- Nav Header (sticky) -->
   <nav class="nav-header">
     <div class="nav-logotype">
-      <a href="${homeHref}" class="nav-logo-text"><img src="${imagesPath}Hanko.gif" width="50" height="50" alt="矛盾" class="nav-logo-gif nav-logo-gif--dark">
-          <img src="${imagesPath}Hanko-light.gif" width="50" height="50" alt="矛盾" class="nav-logo-gif nav-logo-gif--light"></a>
+      <a href="${homeHref}" class="nav-logo-text"><img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--dark">
+          <img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--light"></a>
     </div>
     <div class="nav-links">
 ${linkList('nav-link')}
@@ -105,8 +105,8 @@ ${langBlock('')}
   <!-- Mobile Menu Overlay -->
   <div class="mobile-menu-overlay" id="mobile-menu-overlay">
     <div class="mobile-menu-topbar">
-      <span class="mobile-menu-logo"><img src="${imagesPath}Hanko.gif" width="50" height="50" alt="矛盾" class="nav-logo-gif nav-logo-gif--dark">
-          <img src="${imagesPath}Hanko-light.gif" width="50" height="50" alt="矛盾" class="nav-logo-gif nav-logo-gif--light"></span>
+      <span class="mobile-menu-logo"><img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--dark">
+          <img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--light"></span>
       <div class="mobile-menu-controls">
         <button class="theme-toggle" id="theme-toggle-mobile" type="button" aria-label="${themeLabel}">${THEME_TOGGLE_SVG}
         </button>
@@ -130,8 +130,8 @@ function footer(lang, imagesPath) {
   return `  <footer class="footer">
     <div class="footer-content">
       <div class="footer-logo">
-        <p class="footer-mark-jp">矛盾</p>
-        <p class="footer-mark-en">MUJUN</p>
+        <p class="footer-mark-raft">RAFT</p>
+        <p class="footer-mark-design">DESIGN</p>
       </div>
       <div class="footer-text">
         <div class="footer-column">
@@ -197,7 +197,7 @@ const BOTTOM_SCRIPT = `  <script>
           } else {
             document.documentElement.dataset.theme = 'light';
           }
-          localStorage.setItem('mujun-theme', next);
+          localStorage.setItem('raft-theme', next);
           toggles.forEach(t => t.setAttribute('aria-label', next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'));
         });
       });
@@ -245,7 +245,7 @@ const GTAG_SNIPPET = `  <!-- Google tag (gtag.js) -->
   </script>`;
 
 const THEME_HEAD_SCRIPT = `  <script>
-    if (localStorage.getItem('mujun-theme') === 'light') {
+    if (localStorage.getItem('raft-theme') === 'light') {
       document.documentElement.dataset.theme = 'light';
     }
   </script>`;
@@ -355,11 +355,11 @@ function buildIndexPage(lang, articles) {
   const otherUrl = isJa ? `${SITE}/journal/` : `${SITE}/ja/journal/`;
 
   const title = isJa
-    ? 'ジャーナル — デザインリーダーシップとAIネイティブな実践 | 矛盾スタジオ'
-    : 'Journal — Design Leadership & AI-Native Practice | Mujun Studio';
+    ? 'ジャーナル — デザインリーダーシップとAIネイティブな実践 | Raft Design'
+    : 'Journal — Design Leadership & AI-Native Practice | Raft Design';
   const description = isJa
-    ? 'デザインで導く、ということ。デザインの実践が、働き方の未来と交わる場所。矛盾スタジオ創業者ランス・シールズによるエッセイ。'
-    : 'Leading through design. Where the practice of design meets the future of how we work — essays from Mujun Studio founder Lance Shields.';
+    ? 'デザインで導く、ということ。デザインの実践が、働き方の未来と交わる場所。Raft Design創業者ランス・シールズによるエッセイ。'
+    : 'Leading through design. Where the practice of design meets the future of how we work — essays from Raft Design founder Lance Shields.';
   const heroTitle = isJa ? 'ジャーナル' : 'Journal';
   const heroSub = isJa
     ? 'デザインで導く、ということ。<br aria-hidden>デザインの実践が、働き方の未来と交わる場所。'
@@ -477,7 +477,7 @@ function buildArticlePage(article, allArticles) {
   const stylesPath = '../../../';
   const imagesPath = '../../../images/';
   const url = `${SITE}/ja/journal/${article.slug}/`;
-  const title = `${j.title} | 矛盾スタジオ ジャーナル`;
+  const title = `${j.title} | Raft Design ジャーナル`;
   const ogImage = `${SITE}/images/${article.image}`;
 
   const authorUrl = 'https://www.linkedin.com/in/lanceshields/';
