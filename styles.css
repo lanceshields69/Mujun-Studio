@@ -1225,6 +1225,12 @@ p {
   min-width: 0;
 }
 
+/* A trailing row with a single item would otherwise stretch to the
+   full row width — cap it to match a normal column's width instead. */
+.faq-row--single .faq-item {
+  max-width: calc(50% - 30px);
+}
+
 .faq-question {
   font-size: 28px;
   line-height: 1;
@@ -2166,6 +2172,10 @@ p {
   .faq-row {
     flex-direction: column;
     gap: 48px;
+  }
+
+  .faq-row--single .faq-item {
+    max-width: none;
   }
 
   .origin-content {

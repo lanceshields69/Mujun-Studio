@@ -11,7 +11,7 @@ const path = require('path');
 
 const ROOT = __dirname;
 const DATA_DIR = path.join(ROOT, 'journal', 'data');
-const SITE = 'https://mujunstudio.com';
+const SITE = 'https://raftdesign.studio';
 
 const THEME_TOGGLE_SVG = `
         <svg class="theme-toggle-icon theme-toggle-icon--moon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
