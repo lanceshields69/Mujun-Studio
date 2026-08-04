@@ -47,8 +47,11 @@
     ]
   },
   "en": {
-    "title": "The Contradiction That Became a Studio",
-    "excerpt": "Twenty years of moving between Tokyo and San Francisco, brand work and product design, taught me the same lesson from every direction: the strongest work holds two opposing truths at once instead of resolving them. That became the studio's entire thesis.",
-    "substackUrl": "https://upstreamjournal.substack.com/p/the-contradiction-that-became-a-studio"
+    "title": "Why I Built a Raft, Not a Ship",
+    "excerpt": "On choosing to build something built to move with change, rather than something built to look finished.",
+    "substackUrl": "https://upstreamjournal.substack.com/p/why-i-built-a-raft-not-a-ship",
+    "image": "article-img-why-i-built-a-raft.jpg",
+    "imageWidth": 2880,
+    "imageHeight": 1620
   }
 }
