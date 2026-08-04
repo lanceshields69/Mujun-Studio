@@ -386,11 +386,11 @@ function buildIndexPage(lang, articles) {
 ${jsonLd({
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Mujun Studio',
+  name: 'Raft Design',
   url: isJa ? `${SITE}/ja/` : SITE,
   description: isJa
-    ? '日米をまたいでブランド、プロダクト、デジタル体験を手がけるAIネイティブなプロダクトスタジオ。'
-    : 'AI-native product studio working across the U.S. and Japan on brand, product, and digital experience.',
+    ? '日米をまたいでブランド、プロダクト、デジタル体験を手がけるAIネイティブなスタジオ。'
+    : 'AI-native studio working across the U.S. and Japan on brand, product, and digital experience.',
   ...(isJa ? { inLanguage: 'ja' } : {}),
   founder: { '@type': 'Person', name: 'Lance Shields' },
   areaServed: ['US', 'JP'],
@@ -516,7 +516,7 @@ ${prevArticle ? `  <link rel="prev" href="${SITE}/ja/journal/${prevArticle.slug}
   image: ogImage,
   inLanguage: 'ja',
   author: { '@type': 'Person', name: j.author, sameAs: [authorUrl] },
-  publisher: { '@type': 'Organization', name: 'Mujun Studio', url: `${SITE}/ja/` },
+  publisher: { '@type': 'Organization', name: 'Raft Design', url: `${SITE}/ja/` },
   mainEntityOfPage: url,
   ...(inSeries ? {
     isPartOf: { '@type': 'CreativeWorkSeries', name: UPSTREAM_SERIES_NAME, url: `${SITE}/ja/journal/` },
@@ -532,9 +532,9 @@ ${jsonLd({
 ${jsonLd({
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Mujun Studio',
+  name: 'Raft Design',
   url: `${SITE}/ja/`,
-  description: '日米をまたいでブランド、プロダクト、デジタル体験を手がけるAIネイティブなプロダクトスタジオ。',
+  description: '日米をまたいでブランド、プロダクト、デジタル体験を手がけるAIネイティブなスタジオ。',
   inLanguage: 'ja',
   founder: { '@type': 'Person', name: 'Lance Shields' },
   areaServed: ['US', 'JP'],
