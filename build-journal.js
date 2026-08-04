@@ -88,8 +88,8 @@ function nav(lang, imagesPath, journalHref, langSwitch) {
   return `  <!-- Nav Header (sticky) -->
   <nav class="nav-header">
     <div class="nav-logotype">
-      <a href="${homeHref}" class="nav-logo-text"><img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--dark">
-          <img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--light"></a>
+      <a href="${homeHref}" class="nav-logo-text"><img src="${imagesPath}r-mark-dark.gif" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--dark">
+          <img src="${imagesPath}r-mark-light.gif" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--light"></a>
     </div>
     <div class="nav-links">
 ${linkList('nav-link')}
@@ -105,8 +105,8 @@ ${langBlock('')}
   <!-- Mobile Menu Overlay -->
   <div class="mobile-menu-overlay" id="mobile-menu-overlay">
     <div class="mobile-menu-topbar">
-      <span class="mobile-menu-logo"><img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--dark">
-          <img src="${imagesPath}r-mark-logo.svg" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--light"></span>
+      <span class="mobile-menu-logo"><img src="${imagesPath}r-mark-dark.gif" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--dark">
+          <img src="${imagesPath}r-mark-light.gif" width="50" height="50" alt="Raft Design" class="nav-logo-gif nav-logo-gif--light"></span>
       <div class="mobile-menu-controls">
         <button class="theme-toggle" id="theme-toggle-mobile" type="button" aria-label="${themeLabel}">${THEME_TOGGLE_SVG}
         </button>
@@ -146,7 +146,7 @@ function footer(lang, imagesPath) {
             <p class="footer-heading">${office.contact}</p>
             <div class="footer-links">
               <a href="tel:4153619584" class="footer-link">(415) 361-9584</a>
-              <a href="mailto:hello@mujunstudio.com" class="footer-link">hello@mujunstudio.com</a>
+              <a href="mailto:hello@raftdesign.studio" class="footer-link">hello@raftdesign.studio</a>
             </div>
           </div>
         </div>
@@ -254,7 +254,7 @@ function fontLink(lang) {
   const jpWeights = lang === 'ja' ? '400;500;600;900' : '900';
   return `  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,900&family=Noto+Sans+JP:wght@${jpWeights}&family=Lora:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">`;
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,200;14..32,300;14..32,400;14..32,500;14..32,900&family=Noto+Sans+JP:wght@${jpWeights}&family=Lora:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">`;
 }
 
 function esc(s) {
@@ -320,7 +320,7 @@ ${GTAG_SNIPPET}
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ${head}
-  <link rel="icon" type="image/png" href="${imagesPath}favicon.png">
+  <link rel="icon" type="image/png" href="${imagesPath}r-mark-favicon.png">
 ${fontLink(lang)}
   <link rel="stylesheet" href="${stylesPath}styles.css">
   <link rel="stylesheet" href="${stylesPath}work-index.css">
@@ -460,7 +460,9 @@ ${cardsHtml.join('\n')}
     ? { otherHref: '/journal/', otherHreflang: 'en' }
     : { otherHref: '/ja/journal/', otherHreflang: 'ja' };
 
-  return page({ lang, stylesPath, imagesPath, head, journalHref, langSwitch, bodyMain });
+  const extraCss = isJa ? '\n  <link rel="stylesheet" href="../ja.css">' : '';
+
+  return page({ lang, stylesPath, imagesPath, extraCss, head, journalHref, langSwitch, bodyMain });
 }
 
 // ---------------------------------------------------------------------
@@ -636,7 +638,9 @@ ${authorCardHtml}
     otherRel: 'noopener',
   };
 
-  return page({ lang: 'ja', stylesPath, imagesPath, head, journalHref, langSwitch, bodyMain });
+  const extraCss = '\n  <link rel="stylesheet" href="../../ja.css">';
+
+  return page({ lang: 'ja', stylesPath, imagesPath, extraCss, head, journalHref, langSwitch, bodyMain });
 }
 
 // ---------------------------------------------------------------------
