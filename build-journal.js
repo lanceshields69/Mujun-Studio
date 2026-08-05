@@ -436,11 +436,8 @@ ${jsonLd({
       const alt = isJa ? a.ja.thumbnailAlt : `Thumbnail for "${a.en.title}"`;
       const href = isJa ? `/ja/journal/${a.slug}/` : a.en.substackUrl;
       const linkAttrs = isJa ? '' : ' target="_blank" rel="noopener"';
-      // en.image/imageWidth/imageHeight optionally override the shared
-      // (JA-used) image when an article's EN and JA versions diverge.
-      const img = (!isJa && a.en.image) ? a.en : a;
       return `        <a href="${href}" class="journal-card"${linkAttrs}>
-          <img class="journal-card-image" src="${imagesPath}${img.image}" width="${img.imageWidth}" height="${img.imageHeight}" alt="${esc(alt)}" loading="lazy">
+          <img class="journal-card-image" src="${imagesPath}${a.image}" width="${a.imageWidth}" height="${a.imageHeight}" alt="${esc(alt)}" loading="lazy">
           <p class="journal-card-title">${esc(t)}</p>
           <p class="journal-card-excerpt">${esc(excerpt)}</p>
           <p class="journal-card-link text-link"><span class="arrow">→</span> ${readLabel}</p>
@@ -668,12 +665,9 @@ function buildHomeCarousel(lang, articles) {
     const alt = isJa ? a.ja.thumbnailAlt : `Thumbnail for "${a.en.title}"`;
     const href = isJa ? `/ja/journal/${a.slug}/` : a.en.substackUrl;
     const linkAttrs = isJa ? '' : ' target="_blank" rel="noopener"';
-    // en.image/imageWidth/imageHeight optionally override the shared
-    // (JA-used) image when an article's EN and JA versions diverge.
-    const img = (!isJa && a.en.image) ? a.en : a;
     return `          <a href="${href}" class="journal-carousel-card"${linkAttrs}>
             <div class="journal-carousel-card-image-wrap">
-              <img class="journal-carousel-card-image" src="${imagesPath}${img.image}" width="${img.imageWidth}" height="${img.imageHeight}" alt="${esc(alt)}" loading="lazy">
+              <img class="journal-carousel-card-image" src="${imagesPath}${a.image}" width="${a.imageWidth}" height="${a.imageHeight}" alt="${esc(alt)}" loading="lazy">
             </div>
             <div class="journal-carousel-card-body">
               <p class="journal-carousel-card-title">${esc(t)}</p>
