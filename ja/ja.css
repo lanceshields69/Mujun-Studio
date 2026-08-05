@@ -118,23 +118,13 @@ body {
   max-width: 380px;
 }
 
-/* 4. Fraunces has no Japanese glyphs — carry the accent with weight
-   and color instead of a synthesized italic. */
+/* 4. Fraunces has no Japanese glyphs — use Noto Serif JP Black for
+   the accent word instead, keeping the same weight and color. */
 .emphasis {
-  font-family: inherit;
+  font-family: 'Noto Serif JP', serif;
   font-style: normal;
   font-weight: 900;
   color: var(--text-accent);
   font-size: 1em;
   letter-spacing: 0;
-}
-
-/* 5. Same issue for stat numbers — "億" in "5.4億+" has no Fraunces
-   glyph, so the whole figure falls back to the JP body font instead
-   of letting the browser split fonts mid-string. */
-.stat-number {
-  font-family: inherit;
-  font-style: normal;
-  font-weight: 900;
-  font-variation-settings: normal;
 }
