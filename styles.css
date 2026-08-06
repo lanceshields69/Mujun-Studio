@@ -966,6 +966,7 @@ p {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid var(--border-rule);
+  margin-bottom: 30px;
 }
 
 .reel-video iframe {

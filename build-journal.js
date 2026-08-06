@@ -653,7 +653,7 @@ const CAROUSEL_END = '<!-- JOURNAL_CAROUSEL:END -->';
 function buildHomeCarousel(lang, articles) {
   const isJa = lang === 'ja';
   const imagesPath = isJa ? '../images/' : 'images/';
-  const badge = isJa ? 'ジャーナル' : 'JOURNAL';
+  const badge = 'JOURNAL';
   const viewAll = isJa ? 'すべての記事を見る →' : 'View all articles →';
   const viewAllHref = isJa ? '/ja/journal/' : '/journal/';
   const readLabel = isJa ? '記事を読む' : 'Read';
