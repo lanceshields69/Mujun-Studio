@@ -40,16 +40,16 @@ const CLOSE_SVG = `<svg width="17" height="16" viewBox="0 0 16.5332 16" fill="no
 
 const NAV_ITEMS = {
   en: [
-    ['approach', 'Approach'], ['practice', 'Practice'], ['work', 'Work'],
-    ['build', 'Build'], ['origin', 'Origin'], ['studio', 'Studio'],
+    ['approach', 'Approach'], ['expertise', 'Expertise'], ['projects', 'Projects'],
+    ['build', 'Build'], ['studio', 'Studio'],
   ],
   ja: [
-    ['approach', 'アプローチ'], ['practice', 'できること'], ['work', '実績'],
-    ['build', 'つくり方'], ['origin', '由来'], ['studio', 'スタジオ'],
+    ['approach', 'Approach'], ['expertise', 'Expertise'], ['projects', 'Projects'],
+    ['build', 'Build'], ['studio', 'Studio'],
   ],
 };
-const JOURNAL_LABEL = { en: 'Journal', ja: 'ジャーナル' };
-const CONTACT_LABEL = { en: 'Contact', ja: 'お問い合わせ' };
+const JOURNAL_LABEL = { en: 'Journal', ja: 'Journal' };
+const CONTACT_LABEL = { en: 'Contact', ja: 'Contact' };
 
 // langSwitch: { activeLabel, otherHref, otherHreflang, otherTarget, otherRel }
 function nav(lang, imagesPath, journalHref, langSwitch) {
