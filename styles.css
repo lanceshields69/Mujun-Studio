@@ -1242,6 +1242,22 @@ p {
   height: 570px;
 }
 
+.awards-logos--dark {
+  display: block;
+}
+
+.awards-logos--light {
+  display: none;
+}
+
+[data-theme="light"] .awards-logos--dark {
+  display: none;
+}
+
+[data-theme="light"] .awards-logos--light {
+  display: block;
+}
+
 /* FAQs Section */
 .faq-section {
   padding: 24px 16px 96px;
