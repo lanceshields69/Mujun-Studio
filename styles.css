@@ -1193,6 +1193,48 @@ p {
   width: 100%;
 }
 
+.awards-section {
+  margin-top: 48px;
+}
+
+.awards-heading {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.6px;
+  margin-bottom: 32px;
+}
+
+.awards-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.awards-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.awards-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-rule);
+}
+
+.awards-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.awards-logos {
+  flex-shrink: 0;
+  width: 400px;
+  height: auto;
+}
+
 /* FAQs Section */
 .faq-section {
   padding: 24px 16px 96px;
@@ -2221,6 +2263,16 @@ p {
   .stats-content {
     flex-direction: column;
     gap: 40px;
+  }
+
+  .awards-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .awards-logos {
+    width: 100%;
+    max-width: 400px;
   }
 
   .stats-intro {
