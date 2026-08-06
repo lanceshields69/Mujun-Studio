@@ -360,7 +360,7 @@ function buildIndexPage(lang, articles) {
   const description = isJa
     ? 'デザインで導く、ということ。デザインの実践が、働き方の未来と交わる場所。Raft Design創業者ランス・シールズによるエッセイ。'
     : 'Leading through design. Where the practice of design meets the future of how we work — essays from Raft Design founder Lance Shields.';
-  const heroTitle = isJa ? 'ジャーナル' : 'Journal';
+  const heroTitle = 'Journal';
   const heroSub = isJa
     ? 'デザインで導く、ということ。<br aria-hidden>デザインの実践が、働き方の未来と交わる場所。'
     : 'Leading through design.<br aria-hidden>Where the practice of design meets the future of how we work.';
@@ -551,7 +551,7 @@ ${jsonLd({
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'ホーム', item: `${SITE}/ja/` },
-    { '@type': 'ListItem', position: 2, name: 'ジャーナル', item: `${SITE}/ja/journal/` },
+    { '@type': 'ListItem', position: 2, name: 'Journal', item: `${SITE}/ja/journal/` },
     { '@type': 'ListItem', position: 3, name: j.title, item: url },
   ],
 })}`;
