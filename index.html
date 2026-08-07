@@ -690,7 +690,6 @@
         <p class="connect-heading"><span class="cta-accent">Connect</span> with me to explore your project's potential.</p>
         <div class="connect-cta-group">
           <button class="scan-cta scan-cta--wide" id="contact-modal-btn" type="button"><span class="scan-cta-arrow">→</span> Send a message</button>
-          <button class="scan-cta" id="scan-cta-btn" type="button"><span class="scan-cta-arrow">→</span> Scan your site</button>
         </div>
       </div>
       <hr class="divider">
@@ -1380,7 +1379,7 @@
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('#scan-cta-btn, #scan-banner-cta-btn').forEach((btn) => btn.addEventListener('click', openScanModal));
+    document.getElementById('scan-banner-cta-btn').addEventListener('click', openScanModal);
     scanModalOverlay.addEventListener('click', (e) => {
       if (e.target === e.currentTarget) closeScanModal();
     });

@@ -692,7 +692,6 @@
         <p class="connect-heading"><span class="cta-accent">ご相談ください。</span>まだ名前のついていない矛盾から始めます。</p>
         <div class="connect-cta-group">
           <button class="scan-cta" id="contact-modal-btn" type="button"><span class="scan-cta-arrow">→</span> メッセージを送る</button>
-          <button class="scan-cta" id="scan-cta-btn" type="button"><span class="scan-cta-arrow">→</span> サイトを診断</button>
         </div>
       </div>
       <hr class="divider">
@@ -1382,7 +1381,7 @@
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('#scan-cta-btn, #scan-banner-cta-btn').forEach((btn) => btn.addEventListener('click', openScanModal));
+    document.getElementById('scan-banner-cta-btn').addEventListener('click', openScanModal);
     scanModalOverlay.addEventListener('click', (e) => {
       if (e.target === e.currentTarget) closeScanModal();
     });
