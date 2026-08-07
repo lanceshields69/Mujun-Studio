@@ -1707,7 +1707,7 @@ p {
   flex-shrink: 0;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--border-rule);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 999px;
   background: none;
   color: var(--text-primary);
@@ -1716,7 +1716,7 @@ p {
 }
 
 .scan-modal-close:hover {
-  background: var(--border-rule);
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .scan-modal-close svg {
