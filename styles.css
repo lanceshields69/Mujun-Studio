@@ -1701,27 +1701,18 @@ p {
   top: 34px;
   right: 54px;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 999px;
   background: none;
-  color: var(--text-primary);
+  border: none;
+  font-size: 28px;
   cursor: pointer;
-  transition: background 0.2s;
+  color: var(--text-muted);
+  line-height: 1;
+  padding: 0 4px;
+  transition: opacity 0.2s;
 }
 
 .scan-modal-close:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.scan-modal-close svg {
-  width: 14px;
-  height: 14px;
+  opacity: 0.5;
 }
 
 /* Footer */
