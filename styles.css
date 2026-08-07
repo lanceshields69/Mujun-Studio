@@ -1264,7 +1264,7 @@ p {
 
 /* Design Intelligence Banner (Scan CTA) */
 .scan-banner-section {
-  padding: 60px;
+  padding: 32px;
   max-width: 1920px;
   border-top: 1px solid var(--border-rule);
 }
