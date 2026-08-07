@@ -11,6 +11,8 @@
   --text-accent:   #3DE83D;  /* colored text/links — shifts per theme for contrast */
   --border-rule:   #1E3A28;  /* dividers, hairlines */
   --border-button: #3DE83D;  /* pill button outlines — shifts per theme, matches --text-accent */
+  --bg-sunken:     #02190A;  /* recessed panel fill (darker than canvas), e.g. the scan-banner card */
+  --border-bright: #438259;  /* border on sunken panels — shifts per theme */
   --accent-ink:    #0B1F14;  /* text sitting on brand-green blocks — constant across themes */
 
   /* Wordmark logo palette — fixed, independent of page theme (the green
@@ -29,6 +31,8 @@
   --text-accent:   #159845;
   --border-rule:   #CFE5D7;
   --border-button: #159845;
+  --bg-sunken:     #EAFFEA;
+  --border-bright: #A9C7B4;
 }
 
 /* Reset & Base */
@@ -1268,11 +1272,10 @@ p {
 .scan-banner-box {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 40px;
   padding: 60px 48px;
-  background-color: #02190A;
-  border: 1px solid #438259;
+  background-color: var(--bg-sunken);
+  border: 1px solid var(--border-bright);
 }
 
 .scan-banner-text {
@@ -1280,6 +1283,13 @@ p {
   flex-direction: column;
   gap: 16px;
   max-width: 640px;
+  flex-shrink: 0;
+}
+
+.scan-banner-cta-wrap {
+  display: flex;
+  justify-content: center;
+  flex: 1;
 }
 
 .scan-banner-heading {
@@ -1287,20 +1297,18 @@ p {
   font-size: 34px;
   line-height: 36px;
   letter-spacing: 0.4px;
-  color: var(--lime);
+  color: var(--text-accent);
 }
 
 .scan-banner-body {
   font-size: 20px;
   line-height: 28px;
   font-weight: 400;
-  color: var(--white);
+  color: var(--text-primary);
 }
 
 .scan-banner-box .scan-cta {
   flex-shrink: 0;
-  color: var(--white);
-  border-color: var(--lime);
 }
 
 /* FAQs Section */
@@ -1405,6 +1413,10 @@ p {
   font-weight: 400;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+}
+
+.scan-cta--wide {
+  padding: 20px 60px;
 }
 
 .scan-cta:hover {
@@ -2341,6 +2353,12 @@ p {
 
   .scan-banner-text {
     max-width: none;
+  }
+
+  .scan-banner-cta-wrap {
+    flex: none;
+    justify-content: flex-start;
+    width: 100%;
   }
 
   .awards-row {
