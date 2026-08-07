@@ -1696,6 +1696,34 @@ p {
   border: none;
 }
 
+.scan-modal-close {
+  position: absolute;
+  top: 34px;
+  right: 54px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-rule);
+  border-radius: 999px;
+  background: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.scan-modal-close:hover {
+  background: var(--border-rule);
+}
+
+.scan-modal-close svg {
+  width: 14px;
+  height: 14px;
+}
+
 /* Footer */
 .footer {
   padding: 30px 15px 15px;
