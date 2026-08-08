@@ -456,7 +456,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 1px 48px;
+  padding: var(--space-lg) 1px var(--space-xxl);
 }
 
 .journal-carousel-badge {
@@ -464,22 +464,22 @@
   align-items: center;
   background: var(--bg-brand);
   color: var(--accent-ink);
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.52px;
+  font-size: var(--font-size-eyebrow);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   padding: 5px 20px;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .journal-carousel-controls {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--space-md);
 }
 
 .journal-carousel-viewall {
-  font-size: 16px;
+  font-size: var(--font-size-body-md);
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.2s;
@@ -491,7 +491,7 @@
 
 .journal-carousel-arrows {
   display: flex;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 .journal-carousel-arrow {
@@ -501,11 +501,11 @@
   width: 48px;
   height: 48px;
   border: 1px solid var(--border-button);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: none;
   color: var(--text-accent);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: var(--weight-bold);
   cursor: pointer;
   transition: background 0.2s;
   flex-shrink: 0;
@@ -574,13 +574,14 @@
   position: absolute;
   inset: 0;
   background: rgba(4, 34, 15, 0.1);
+  background: rgb(from var(--dark) r g b / 10%);
 }
 
 .journal-carousel-card-body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 24px;
+  padding: var(--space-lg);
 }
 
 .journal-carousel-card-title {
@@ -597,7 +598,7 @@
 @media (max-width: 640px) {
   .journal-carousel-header {
     flex-wrap: wrap;
-    gap: 16px;
+    gap: var(--space-md);
   }
 
   .journal-carousel-card {

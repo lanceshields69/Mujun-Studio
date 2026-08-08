@@ -7,7 +7,7 @@ body {
 /* 1. Kill negative tracking — Japanese sits on a fixed em square. */
 .intro-heading,
 .headline-line,
-.thesis-heading,
+.approach-heading,
 .connect-heading,
 .project-name,
 .service-title,
@@ -19,7 +19,7 @@ body {
 }
 
 /* 2. Open the leading — Japanese needs more room than Latin. */
-.thesis-heading,
+.approach-heading,
 .service-title,
 .modal-title,
 .faq-question,
@@ -28,7 +28,7 @@ body {
   line-height: 1.5;
 }
 
-.thesis-body,
+.approach-body,
 .service-body,
 .project-body p,
 .stats-intro-bio,
@@ -59,8 +59,8 @@ body {
    their column by hundreds of pixels and widen the whole page. */
 .intro-heading,
 .headline-line,
-.thesis-heading,
-.thesis-body,
+.approach-heading,
+.approach-body,
 .connect-heading,
 .project-name,
 .project-subtitle,

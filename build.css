@@ -1,11 +1,11 @@
 /* Build section overrides — loaded after styles.css on both index.html
    and /ja/index.html. Do not edit styles.css.
 
-   #build is the first section to stack .thesis-content (heading/body/
-   link + badge) directly above .services-content (the three cards)
-   inside one .services-section — that combination doesn't exist
+   #build is the first section to stack .approach-content (heading/body/
+   link + badge) directly above .expertise-content (the three cards)
+   inside one .expertise-section — that combination doesn't exist
    elsewhere, so there's no existing margin between the two blocks and
    they render flush against each other. */
-#build .thesis-content {
+#build .approach-content {
   margin-bottom: 40px;
 }
