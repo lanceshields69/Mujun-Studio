@@ -106,7 +106,16 @@ body {
 .article-p,
 .article-author-bio,
 .article-author-name {
+  font-family: 'Noto Sans JP', sans-serif;
   overflow-wrap: anywhere;
+}
+
+/* .section-label is shared with sections whose pill text stays in
+   English/Roman letters (Approach, Expertise, Studio...) even on this
+   page — only the FAQs pill ("よくある質問") is actually Japanese, so
+   this can't be folded into the shared JA font-family rule above. */
+.section-label {
+  font-family: 'Inter', sans-serif;
 }
 
 /* .stats-intro-text's 325px max-width (styles.css) is tuned for the
